@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "5d0a5f8a63447",
+        "Name": "HO016 - Email property no longer classified as sheltered",
+        "Type": "EMAIL",
+        "LIM_id": "83ef69d1-2c5e-11e5-ad20-22000a7a05f5",
+        "Editable": true,
+        "LIM_name": "Portsmouth",
+        "Category": "Housing",
+        "data_type": "integration",
+        "allow_offline": 0,
+        "Output_template": "{\"subject\":\"Property NO LONGER classed as Sheltered ({case_ref})\",\"fromName\":\"{user_fullname}\",\"from\":\"{user_email}\",\"recipients_to\":\"{email_shelteredHousingTo}\",\"recipients_cc\":\"{email_shelteredHousingCC}\",\"recipients_bcc\":\"\",\"pdf_attachments\":\"\",\"body\":\"<h1><u>Property NO LONGER classed as Sheltered ({case_ref})</u></h1>\\n\\n<p>The following property should no longer be classed as Sheltered Accommodation</p>\\n\\n<table width=\\\"100%\\\">\\n\\t<tbody>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"vertical-align:top\\\" width=\\\"30%\\\">Address:</td>\\n\\t\\t\\t<td width=\\\"70%\\\">{propertyAddress/AdTextArea_out}</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"vertical-align:top\\\" width=\\\"30%\\\">The date this should be ended:</td>\\n\\t\\t\\t<td width=\\\"70%\\\">{endDate}</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"vertical-align:top\\\" width=\\\"30%\\\">The date the community alarm system must be disconnected:</td>\\n\\t\\t\\t<td width=\\\"70%\\\">{theDateTheCommuni}</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"vertical-align:top\\\" width=\\\"30%\\\">Additional comments:</td>\\n\\t\\t\\t<td width=\\\"70%\\\">{#additionalComments}</td>\\n\\t\\t</tr>\\n\\t</tbody>\\n</table>\\n\\n<center>\\n<h4>Action to take</h4>\\n</center>\\n\\n<table>\\n\\t<tbody>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"vertical-align:top\\\" width=\\\"15%\\\"><strong>SAC</strong></td>\\n\\t\\t\\t<td width=\\\"85%\\\">Please disable the alarm system. The alarm system should not be removed until Steve Daddow has given written authority to do so.</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td>\\n\\t\\t\\t<p></p>\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"vertical-align:top\\\" width=\\\"15%\\\"><strong>Telecare</strong></td>\\n\\t\\t\\t<td width=\\\"85%\\\">Please archive the record and label inactive.</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td>\\n\\t\\t\\t<p></p>\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"vertical-align:top\\\" width=\\\"15%\\\"><strong>Debit Control</strong></td>\\n\\t\\t\\t<td width=\\\"85%\\\">Please end SPCHARGE, SERVCHARGE via bulk elem on the above days.<br />If currently SHELTCAT code 0.5 then remove the coding using the end date and delete TARGET-CAT.<br />If Shelt Cat 1 change to Shelt Cat 0.</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td>\\n\\t\\t\\t<p></p>\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"vertical-align:top\\\" width=\\\"15%\\\"><strong>NTOs</strong></td>\\n\\t\\t\\t<td width=\\\"85%\\\">If Scheme Manager is not already aware, please notify them</td>\\n\\t\\t</tr>\\n\\t</tbody>\\n</table>\",\"attachments\":\"\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+    }
+]

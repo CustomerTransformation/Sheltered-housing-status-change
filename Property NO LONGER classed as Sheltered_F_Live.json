@@ -1,0 +1,3256 @@
+{
+  "processName": "Property NO LONGER classed as Sheltered",
+  "processDescription": "",
+  "props": {
+    "id": "AF-Process-5ecb7fca-e28e-4603-977d-56397885a950",
+    "category": "AF-Category-b88a4170-933c-43d7-9d1c-c8c114ddca13",
+    "tags": "",
+    "viewGroup": null,
+    "viewGroupToken": null,
+    "date_due": "",
+    "date_due_warn": "",
+    "showCaseReference": false,
+    "isPublished": true,
+    "isSubform": false,
+    "notes": false,
+    "initial_stage": "notification",
+    "initial_stage_id": "AF-Stage-d951c077-2d69-445f-8b3d-91892efedb6f",
+    "prefix": "HO"
+  },
+  "stages": {
+    "notification": {
+      "url": "Stage-1.html",
+      "id": "AF-Stage-d951c077-2d69-445f-8b3d-91892efedb6f",
+      "name": "notification",
+      "props": {
+        "form": "AF-Form-32273f91-17b0-4e17-a9a0-49f90e2d0c98",
+        "xpos": 20,
+        "ypos": 20,
+        "group": null,
+        "integrations": [
+          {
+            "id": "5d0a5f8a63447",
+            "condition": "",
+            "repeat_against": "",
+            "type_condition": "submission",
+            "timed_condition": "",
+            "repeat_interval": ""
+          }
+        ],
+        "user_token": null,
+        "group_token": null,
+        "stopOnFailure": false,
+        "useNewPaymentMethod": false,
+        "textColor": "#ffffff",
+        "user": "__originator__",
+        "backgroundColor": "#0033cc",
+        "date_due": "",
+        "date_due_warn": "",
+        "notification": {
+          "notify_assigned_users": false,
+          "recipients_to": null,
+          "subject": null,
+          "body": null
+        },
+        "escalation": {
+          "notify_assigned_users": true,
+          "recipients_to": null,
+          "subject": null,
+          "body": null,
+          "date": null,
+          "date_type": null,
+          "user_token": null,
+          "group_token": null,
+          "user": null,
+          "group": null,
+          "condition": null,
+          "conditionInputs": {}
+        },
+        "caseViewOption": false,
+        "startSection": "",
+        "usenewPaymentMethod": false,
+        "formDefinition": {
+          "formName": "Property NO LONGER classed as Sheltered",
+          "formDescription": "",
+          "props": {
+            "id": "AF-Form-32273f91-17b0-4e17-a9a0-49f90e2d0c98",
+            "category": "AF-Category-b88a4170-933c-43d7-9d1c-c8c114ddca13",
+            "saveSubmissionData": true,
+            "usePHPIntegrations": true,
+            "serverSideLookupValidation": false,
+            "tags": "",
+            "navigateAwayWarning": "Are you sure you want to navigate away? All progress in this form will be lost.",
+            "navigateAwayWarn": true,
+            "validateOnInit": true,
+            "stopOnFailure": false,
+            "stickyError": false,
+            "showFormReference": false,
+            "mustBeValid": true,
+            "hideHeader": false,
+            "isPublished": false,
+            "isSubform": false,
+            "integrations": [],
+            "notes": false,
+            "submission": {
+              "message": "<p>Your reference number is {summary_ref}.</p><p>Thank you for submitting {form_name}</p><p>{visiblesummary}</p>",
+              "api": "/form/submit/",
+              "download": "Download PDF",
+              "cancel_redirect": null,
+              "continue": "Continue",
+              "conditionInputs": "",
+              "showDownload": true,
+              "showMessage": true,
+              "serverSubmit": false,
+              "redirect": null,
+              "condition": "",
+              "printableIntegrationId": "",
+              "newPaymentMethod": false
+            },
+            "save": {
+              "lim": "3f07ecf4-0dfa-11e2-b0b9-12313b03ed59",
+              "displayCondition": "",
+              "conditionInputs": "",
+              "redirect": null,
+              "allow": false,
+              "fromName": "",
+              "message": "",
+              "subject": "",
+              "mail": false,
+              "from": "",
+              "disableSaveNotify": false
+            },
+            "hideSaveUrl": false,
+            "usePHPIntregration": false,
+            "integrationDefinition": {
+              "58ca773b44b4b": {
+                "Editable": true,
+                "ID": "58ca773b44b4b",
+                "Name": "LLP011 List adddresses to select from",
+                "Type": "DATABASE",
+                "LIM_name": "LIM14",
+                "Category": "z Global",
+                "data_type": "lookup",
+                "allow_offline": 0,
+                "Output_template": "{\"lookup_validation\":\"0\",\"secure_fields_db_database\":\"\",\"results_page_columns_db\":\"\",\"escapeTokens\":\"yes\",\"systemName\":\"Firmstep Solutions Read\",\"query\":\"select CONCAT(trim(concat(sao,' ',pao)),' ',street_name,', ',town_name) as display, uprn as name\\nFROM llpgcache\\nWHERE \\n(\\n(REPLACE(postcode, ' ','') = REPLACE({postcode_search_after},' ',''))\\nOR (concat(trim(concat(sao,' ',pao)),' ',street_name) like concat('%',{postcode_search_after},'%'))\\n)\\nAND length(REPLACE({postcode_search_after},' ',''))>5\\nAND postcode != ''\\nORDER BY CAST(pao AS SIGNED),sao,street_name ASC LIMIT 300\",\"systemID\":\"59dc224eb4f63\"}",
+                "log_only_on_error": 0,
+                "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portmouthcc.gov.uk\"}"
+              },
+              "58ca6c233f02c": {
+                "Editable": true,
+                "ID": "58ca6c233f02c",
+                "Name": "LLP015 Selected value to fields",
+                "Type": "DATABASE",
+                "LIM_name": "LIM14",
+                "Category": "z Global",
+                "data_type": "lookup",
+                "allow_offline": 0,
+                "Output_template": "{\"lookup_validation\":\"0\",\"results_page_columns_db\":\"\",\"escapeTokens\":\"yes\",\"systemName\":\"Firmstep Solutions Read\",\"query\":\"select\\n\\tsao as flat_out,\\n\\tpao as house_out,\\n\\tstreet_name as street_out,\\n\\ttown_name as town_out, \\n\\tpostcode as postcode_out5,\\n\\tuprn as uprn_out,\\n\\tlng as lng_out,\\n\\tlat as lat_out,\\n\\t{Choose_Address} as uprn_selected\\nFROM \\n\\tllpgcache\\nWHERE \\n\\tuprn = {Choose_Address}\",\"systemID\":\"59dc224eb4f63\"}",
+                "log_only_on_error": 0,
+                "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portmouthcc.gov.uk\"}"
+              },
+              "58efbd46c0cbd": {
+                "Editable": true,
+                "ID": "58efbd46c0cbd",
+                "Name": "LLP018 Confirm the entered address",
+                "Type": "DATABASE",
+                "LIM_name": "LIM14",
+                "Category": "z Global",
+                "data_type": "lookup",
+                "allow_offline": 0,
+                "Output_template": "{\"lookup_validation\":\"0\",\"secure_fields_db_database\":\"\",\"results_page_columns_db\":\"\",\"escapeTokens\":\"yes\",\"systemName\":\"Firmstep Solutions Read\",\"query\":\"select\\n\\ta.*,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,'Entered','') as uprn_selected,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,'',1) as Address_Found,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,'',concat(if(b.p1 + b.p2 + b.p3 < 3,if({subParam} like '%mAl%','<span style=\\\"color:red\\\">The address must contain a flat or house and road. </span>','<span style=\\\"color:red\\\">The address must contain a flat or house number, road and postcode. </span>'),''),if(b.p4 = 1,'<span style=\\\"color:red\\\">&nbsp;The postcode must contain a space, for e.g. \\\"PO1 2AL\\\"</span>',''))) as confMsg,\\n\\t'' as confirmAddress,\\n\\tb.*\\nfrom\\n\\t(select\\n\\t\\t123 as id,\\n\\t\\t{flat_out1} as flat_out,\\n\\t\\t{house_out1} as house_out,\\n\\t\\t{street_out1} as street_out,\\n\\t\\t{town_out1} as town_out, \\n\\t\\t{postcode_out51} as postcode_out5,\\n\\t\\t{zIPPostcode1} as zIPPostcode,\\n\\t\\t{country_out1} as country_out,\\n\\t\\t{sel_country} as country_id_out,\\n\\t\\t'' as uprn_out,\\n\\t\\t'' as lng_out,\\n\\t\\t'' as lat_out,\\n\\t\\t'' as existSelected,\\n\\t\\t'' as existingCustomer) as a\\nRIGHT JOIN\\n\\t(select \\n\\t\\tif(c.p1 + c.p2 + c.p3 - c.p4 > 2,'123','321') as id,\\n\\t\\tc.*\\n\\tfrom\\n\\t(select\\n\\t\\tif({flat_out1} != '' or {house_out1} != '',1,if({subParam} like '%mAd%' or {subParam} like '%mAl%',0,1)) as p1,\\n\\t\\tif({street_out1} != '',1,if({subParam} like '%mAd%'or {subParam} like '%mAl%',0,1)) as p2,\\n\\t\\tif({postcode_out51} != '' or {zIPPostcode1} != '',1,if({subParam} like '%mAd%' or {subParam} like '%mPo%',0,1)) as p3,\\n\\t\\tif({postcode_out51} REGEXP '(((^[BEGLMNSbeglmns][1-9][0-9]?)|(^[Ww][2-9])|(^([Aa][BLbl]|[Bb][ABDHLNRSTabnhlnrst]|[Cc][ABFHMORTVWabfhmortvw]|[Dd][ADEGHLNTYadeghlnty]|[Ee][HNXhnx]|[Ff][KYky]|[Gg][LUYluy]|[Hh][ADGPRSUXadgprsux]|[Ii][GMPVgmpv]|[JEje]|[Kk][ATWYatwy]|[Ll][ADELNSUadelnsu]|[Mm][EKLekl]|[Nn][EGNPRWegnprw]|O[LXlx]|[Pp][AEHLORaehlor]|[Rr][GHMghm]|[Ss][AEGKL-Paegkl-pRSTWYrstwy]|[Tt][ADFNQRSWadfnqrsw]|[UBub]|[Ww][ADFNRSVadfnrsv]|YO|ZE|yo|ze)[0-9][0-9]?)|(^[Ww]1[A-Ha-hJKSTUWjkstuw0-9])|(((^[Ww][Cc][1-2])|(^[Ee][Cc][1-4])|(^[Ss][Ww]1))[ABEHMNPRVWXYabehmnprvwxy]))[_ ]([0-9][ABD-Habd-hJLNP-Ujlnp-uW-Zw-z]{2}))$|(^[Gg][Ii][Rr][_ ]0[Aa]{2})$',0,if({postcode_out51} != '',1,0)) as p4) as c) as b\\nON\\n\\ta.id = b.id\",\"systemID\":\"59dc224eb4f63\"}",
+                "log_only_on_error": 0,
+                "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portmouthcc.gov.uk\"}"
+              }
+            }
+          },
+          "sections": [
+            {
+              "url": "Introduction.html",
+              "id": "AF-Section-ef74c23f-7c4a-4425-a838-4bd72220862d",
+              "props": {
+                "hideCancel": false,
+                "conditionInputs": "",
+                "displayCondition": "",
+                "validationInputs": "",
+                "validation": "",
+                "validationMessage": "This Section is Invalid",
+                "validationLookup": {
+                  "enableLookup": false,
+                  "lookupID": "",
+                  "lookupName": "",
+                  "lookupValidation": "",
+                  "lookupOperator": ""
+                }
+              },
+              "name": "Introduction",
+              "fields": [
+                {
+                  "type": "html",
+                  "props": {
+                    "label": "html 4",
+                    "dataName": "html4",
+                    "displayName": "",
+                    "outerClass": "",
+                    "width": "",
+                    "showInSummary": false,
+                    "content": "<h4>Purpose</h4>\n\n<p>To ensure that PCC tenancies are correctly recorded as either General Needs or Sheltered Housing Units.</p>\n\n<p>Status changes occur either at the start of a tenancy or during the duration of a tenancy ( ie from general needs to category 1 or vica versa)</p>\n\n<p>Start of a tenancy - the responsibility is with the housing officer.</p>\n\n<p>During the tenancy -the responsibility is with the Sheltered Housing Management team.</p>\n\n<h4>Sheltered Housing accommodation will have:</h4>\n<ul>\n<li>an appropriate category recorded on Northgate\n    <ul>\n        <li>Shelt CAT 0.5 = Future lettings recorded as general needs</li>\n        <li>Shelt Cat 0 = Future lettings recorded as Sheltered</li>\n    </ul>\n</li>\n<li> additional charges ie sheltered housing service charge and supporting people charge</li>\n<li>an alarm unit within the flat linked into the scheme and/or Southampton telecare </li>\n<li>records held on the telecare system shared with Southampton</li>\n<li>the support of a scheme manager</li>\n<li>These changes relate to Category 1 Sheltered Housing. So Category 2 and Category 2.5 properties always remain as Sheltered Units</li>\n</ul>",
+                    "displayCondition": null,
+                    "readOnly": false
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-d494a33f-9dab-4cb8-915e-acbd0b955e58"
+                },
+                {
+                  "type": "text",
+                  "id": "AF-Field-a6f32b91-8575-4b6b-9520-ecd14ca25349",
+                  "props": {
+                    "label": "First name",
+                    "dataName": "First_Name",
+                    "labelPosition": "alignLeft",
+                    "defaultValue": "Daniel",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": false,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "outputFormat": "normal",
+                    "currencyPrefix": null,
+                    "width": null,
+                    "inputMask": null,
+                    "inputMaskPlaceholder": null,
+                    "lengthCount": null,
+                    "hideWhenBlank": null,
+                    "displayCondition": "",
+                    "mandatory": false,
+                    "minimumLength": "{minLengthOfFirst}",
+                    "maximumLength": "",
+                    "validationCondition": "",
+                    "validationMask": "",
+                    "mandatoryMessage": "This information is required",
+                    "minimumLengthMessage": "This Field Requires More Text",
+                    "maximumLengthMessage": "This Field Requires Less Text",
+                    "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                    "validationConditionMessage": "This Field Is Invalid",
+                    "mandatoryCondition": "{subParam} contains 'mFn'",
+                    "readonlyCondition": "{subParam} contains 'dNmro' or  {subParam} contains 'AFlro'"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "AF-Field-ebc3e91e-bf4d-415b-a6f4-ff1093adc769",
+                  "props": {
+                    "label": "Last name",
+                    "dataName": "Surname",
+                    "labelPosition": "alignLeft",
+                    "defaultValue": "Testing",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": false,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "outputFormat": "normal",
+                    "currencyPrefix": null,
+                    "width": null,
+                    "inputMask": null,
+                    "inputMaskPlaceholder": null,
+                    "lengthCount": null,
+                    "hideWhenBlank": null,
+                    "displayCondition": "",
+                    "mandatory": false,
+                    "minimumLength": "",
+                    "maximumLength": "",
+                    "validationCondition": "",
+                    "validationMask": "",
+                    "mandatoryMessage": "This information is required",
+                    "minimumLengthMessage": "This Field Requires More Text",
+                    "maximumLengthMessage": "This Field Requires Less Text",
+                    "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                    "validationConditionMessage": "This Field Is Invalid",
+                    "mandatoryCondition": "{subParam} contains 'mLn'",
+                    "readonlyCondition": "{subParam} contains 'dNmro' or  {subParam} contains 'AFlro'"
+                  }
+                },
+                {
+                  "type": "text",
+                  "props": {
+                    "label": "Email address",
+                    "dataName": "Email_Address",
+                    "labelPosition": "alignLeft",
+                    "defaultValue": "daniel.gregory@portsmouthcc.gov.uk",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": false,
+                    "summaryField": false,
+                    "displayName": "true",
+                    "outerClass": "",
+                    "labelClass": "",
+                    "inputClass": "",
+                    "outputFormat": "normal",
+                    "currencyPrefix": "",
+                    "width": "",
+                    "inputMask": "",
+                    "inputMaskPlaceholder": "",
+                    "lengthCount": false,
+                    "disableInitialTokenPopulation": null,
+                    "hideWhenBlank": false,
+                    "displayCondition": "",
+                    "mandatory": false,
+                    "minimumLength": "",
+                    "maximumLength": "",
+                    "validationCondition": "",
+                    "validationMask": "/^[-a-z0-9~!$%^&*#_=+}{\\'?]+(\\.[-a-z0-9~!$%^&*#_=+}{\\'?]+)*@[a-z0-9][-a-z0-9_]*(\\.[-a-z0-9_]+)(\\.[a-z0-9]+)*$/gim",
+                    "mandatoryMessage": "Enter an email address - for example 'user@website.com'",
+                    "minimumLengthMessage": "This Field Requires More Text",
+                    "maximumLengthMessage": "This Field Requires Less Text",
+                    "validationMaskMessage": "Enter an email address - for example 'user@website.com'",
+                    "validationConditionMessage": "This Field Is Invalid",
+                    "mandatoryCondition": "{subParam} contains 'mEm'",
+                    "readonlyCondition": "{subParam} contains 'dCiro'"
+                  },
+                  "id": "AF-Field-4f12968c-fce4-4865-8744-e0550866c0cf"
+                }
+              ]
+            },
+            {
+              "url": "Details.html",
+              "id": "AF-Section-cc95cc77-58ce-4fb0-96a9-038f8cd4a9ab",
+              "props": {
+                "hideCancel": false,
+                "conditionInputs": "",
+                "displayCondition": "",
+                "validationInputs": "",
+                "validation": "",
+                "validationMessage": "This Section is Invalid",
+                "validationLookup": {
+                  "enableLookup": false,
+                  "lookupID": "",
+                  "lookupName": "",
+                  "lookupValidation": "",
+                  "lookupOperator": ""
+                }
+              },
+              "name": "Details",
+              "fields": [
+                {
+                  "type": "text",
+                  "props": {
+                    "label": "addrParam",
+                    "dataName": "addrParam",
+                    "labelPosition": "alignLeft",
+                    "defaultValue": "mAd ip",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": false,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "outputFormat": "normal",
+                    "currencyPrefix": null,
+                    "width": null,
+                    "inputMask": null,
+                    "inputMaskPlaceholder": null,
+                    "lengthCount": null,
+                    "hideWhenBlank": null,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumLength": "",
+                    "maximumLength": "",
+                    "validationCondition": "",
+                    "validationMask": "",
+                    "mandatoryMessage": "This field is required",
+                    "minimumLengthMessage": "Please input at least _min_value_ characters",
+                    "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                    "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                    "validationConditionMessage": "This field is invalid",
+                    "validationMaskMessageValue": "Select..."
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-a7063cb8-c8b9-46ec-b572-013a79f4841f"
+                },
+                {
+                  "type": "html",
+                  "props": {
+                    "label": "html 1",
+                    "dataName": "html1",
+                    "displayName": "",
+                    "outerClass": "",
+                    "width": "",
+                    "showInSummary": false,
+                    "content": "<p>The following property should no longer be classed as Sheltered Accommodation</p>",
+                    "displayCondition": null
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-5e14ed5d-44c0-45f4-968f-5cca7ee9fae3"
+                },
+                {
+                  "type": "subform",
+                  "props": {
+                    "label": "Property Address",
+                    "dataName": "propertyAddress",
+                    "labelPosition": "alignLeft",
+                    "formName": "SFG_Address v2",
+                    "form": "AF-Form-b6b9f99b-bb02-4bb4-9fe3-2ae908c72e27",
+                    "displayStyle": "summary",
+                    "lookup": "",
+                    "lookupCondition": "once",
+                    "preventRunningOnInitialisation": false,
+                    "lookupButton": null,
+                    "noResultsMessage": "",
+                    "hidden": false,
+                    "readOnly": false,
+                    "repeatable": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "buttonText": "Add Record",
+                    "popupTitle": null,
+                    "totalColumn": null,
+                    "tablePosition": "top",
+                    "disableAdd": null,
+                    "disableEdit": null,
+                    "disableDelete": null,
+                    "disableAddOnCalculations": null,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": true,
+                    "minimumRepeats": "1",
+                    "maximumRepeats": null,
+                    "mandatoryMessage": "This field is required",
+                    "minimumRepeatsMessage": "Not enough entries",
+                    "maximumRepeatsMessage": "Too many entries",
+                    "formId": "AF-Form-b6b9f99b-bb02-4bb4-9fe3-2ae908c72e27",
+                    "subformDefinition": {
+                      "formName": "SFG_Address v2",
+                      "formDescription": "",
+                      "props": {
+                        "id": "AF-Form-b6b9f99b-bb02-4bb4-9fe3-2ae908c72e27",
+                        "category": "AF-Category-6f2fdcc6-15e3-411f-b456-83dd66b0a82b",
+                        "saveSubmissionData": true,
+                        "usePHPIntregration": false,
+                        "serverSideLookupValidation": false,
+                        "tags": "",
+                        "navigateAwayWarning": "Are you sure you want to navigate away? All progress in this form will be lost.",
+                        "navigateAwayWarn": true,
+                        "validateOnInit": true,
+                        "stopOnFailure": false,
+                        "stickyError": false,
+                        "showFormReference": false,
+                        "mustBeValid": true,
+                        "hideHeader": false,
+                        "isPublished": false,
+                        "isSubform": true,
+                        "integrations": [],
+                        "notes": false,
+                        "submission": {
+                          "message": "<p>Your reference number is {summary_ref}.</p><p>Thank you for submitting {form_name}</p><p>{visiblesummary}</p>",
+                          "api": "/form/submit/",
+                          "download": "Download PDF",
+                          "cancel_redirect": null,
+                          "continue": "Continue",
+                          "conditionInputs": "",
+                          "showDownload": true,
+                          "showMessage": true,
+                          "serverSubmit": true,
+                          "redirect": null,
+                          "condition": "",
+                          "printableIntegrationId": "",
+                          "newPaymentMethod": false
+                        },
+                        "save": {
+                          "lim": "3f07ecf4-0dfa-11e2-b0b9-12313b03ed59",
+                          "displayCondition": "",
+                          "conditionInputs": "",
+                          "redirect": null,
+                          "allow": false,
+                          "fromName": "",
+                          "message": "",
+                          "subject": "",
+                          "mail": false,
+                          "from": "",
+                          "disableSaveNotify": false
+                        },
+                        "hideSaveUrl": false,
+                        "usePHPIntegrations": true
+                      },
+                      "sections": [
+                        {
+                          "url": "Section-1.html",
+                          "id": "AF-Section-b65a9dfa-d2ff-4d4d-b023-940af2375b41",
+                          "props": {
+                            "hideCancel": false,
+                            "conditionInputs": "",
+                            "displayCondition": "",
+                            "validationInputs": "",
+                            "validation": "",
+                            "validationMessage": "This Section is Invalid",
+                            "validationLookup": {
+                              "enableLookup": false,
+                              "lookupID": "",
+                              "lookupName": "",
+                              "lookupValidation": "",
+                              "lookupOperator": ""
+                            }
+                          },
+                          "name": "Section 1",
+                          "fields": [
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Sub Form Paramaters",
+                                "dataName": "subParam",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({addrParam}!='',{addrParam}, 'PL mAd')",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-0cf42c24-621e-4fc8-8ee2-a917dd498cbd"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "address parts",
+                                "dataName": "addressParts",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "length(concat(trim({flat_out}), trim({house_out}), trim({street_out}), trim({town_out}), trim({postcode_out5}), trim({country_out})))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-e3f787d9-d443-4a20-a784-0103d2372ba5"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Default for Address In Out",
+                                "dataName": "defaultAddressIn",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({subParam} contains 'ip',0,\n           if({subParam} contains 'op',1,\n                     if({subParam} contains 'ov',2,'')))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-b69e5714-cda0-494a-98aa-3ee04e18d329"
+                            },
+                            {
+                              "type": "radio",
+                              "props": {
+                                "label": "Is the address",
+                                "dataName": "AddressIn",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "text",
+                                "defaultValue": null,
+                                "defaultValueText": "{defaultAddressIn}",
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "In Portsmouth",
+                                    "value": "0"
+                                  },
+                                  {
+                                    "label": "Outside of Portsmouth",
+                                    "value": "1"
+                                  },
+                                  {
+                                    "label": "Overseas",
+                                    "value": "2"
+                                  }
+                                ],
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "displayStyle": "horizontal",
+                                "styleAsButton": null,
+                                "hideWhenBlank": null,
+                                "hidden": false,
+                                "displayCondition": "{subParam} contains 'PL'",
+                                "selectCondition": "",
+                                "mandatoryCondition": "{subParam} contains 'mAd' or {subParam} contains 'mPo'",
+                                "readonlyCondition": "{showAd} contains 'RO'",
+                                "mandatory": false,
+                                "mandatoryMessage": "This information is required",
+                                "preventRunningOnInitialisation": null
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "subParam",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "PL",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ],
+                              "id": "AF-Field-4ae95a82-7a57-4cc0-bafc-4be9e2877ba6"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Check Address In Ou",
+                                "dataName": "checkAddressIn",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({subParam} notcontains 'PL',{defaultAddressIn},{AddressIn})",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "id": "AF-Field-1dceb49f-dc65-48ba-9f6c-151e42997df1"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Show Address Fields",
+                                "dataName": "showAd",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({uprn_selected} != '' or {subParam} contains 'dAro', \n\t\t'ShowRO', \n\t\tif({Address_Found}=1 or {subParam} contains 'dAd' or {checkAddressIn} > 0, \n\t\t\t\t'ShowUD', \n\t\t\t\tif({subParam} contains 'dAl' or {checkAddressIn} icontains '0', \n\t\t\t\t\tif({Choose_Address} != '', \n\t\t\t\t\t\t'sPickShowRO', \n\t\t\t\t\t\t'sPick'), \n\t\t\t\t\t'')))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-5e470bc1-db40-4fa3-9c84-e218e1d56032"
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-3a8034cb-99f5-4dc7-ba17-ea7ac21e4521",
+                              "props": {
+                                "label": "Postcode / road search",
+                                "dataName": "postcode_search",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "{showAd} contains 'sPick'",
+                                "mandatoryCondition": "{subParam} contains 'mAd'",
+                                "readonlyCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "Please enter a Postcode for example 'PO1 2AL' or Road Name",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "Please enter a Postcode for example 'PO1 2AL' or Road Name",
+                                "validationConditionMessage": "This Field Is Invalid"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "sPick",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "button",
+                              "props": {
+                                "label": "Lookup Address",
+                                "dataName": "lookupAddress",
+                                "labelPosition": "hideLabel",
+                                "helpText": "",
+                                "lookup": [
+                                  "58ca6c247467c"
+                                ],
+                                "noResultsMessage": "",
+                                "action": "",
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "width": "",
+                                "buttonText": "Look up address",
+                                "displayCondition": "{showAd} contains 'sPick'"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "sPick",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ],
+                              "id": "AF-Field-2bcc30f2-1639-4b6c-b52b-baadd4095397"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Address Mandatory",
+                                "dataName": "addressMandatory",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "{flat_out} + {house_out} + {street_out} + {postcode_out5}",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatoryCondition": "{subParam} contains 'mAd' and {showAd} icontains 'sPick' and {postcode_search_after} = '' ",
+                                "readonlyCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "Use Lookup button to find an address",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-ad5e3ec1-be18-4c9b-a860-df526c98c4a3"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "postcode_search_after",
+                                "dataName": "postcode_search_after",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "outputFormat": "normal",
+                                "currencyPrefix": "",
+                                "width": "",
+                                "inputMask": "",
+                                "inputMaskPlaceholder": "",
+                                "lengthCount": false,
+                                "hideWhenBlank": false,
+                                "displayCondition": "",
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-b07efb83-80e8-45d9-814c-f3760d59d276"
+                            },
+                            {
+                              "type": "select",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "This Field Requires you select more choices",
+                                "maximumChoicesMessage": "Please select an address or enter manually",
+                                "label": "Choose address",
+                                "dataName": "Choose_Address",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "lookup",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": "58ca773b44b4b",
+                                "lookupCondition": "onInputChange",
+                                "lookupButton": null,
+                                "noResultsMessage": "",
+                                "tokenName": null,
+                                "listOfValues": null,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "width": "",
+                                "selectLabel": "Select...",
+                                "allowMultiple": false,
+                                "hideWhenBlank": false,
+                                "hidden": false,
+                                "enableFilter": false,
+                                "displayCondition": "{showAd} contains 'sPick' and {postcode_search_after} isnt ''",
+                                "selectCondition": "",
+                                "mandatoryCondition": "{subParam} contains 'mAd'",
+                                "readonlyCondition": "",
+                                "mandatory": false,
+                                "mandatoryMessage": "Please select an address or enter manually",
+                                "preventRunningOnInitialisation": true
+                              },
+                              "id": "AF-Field-c3fcd04c-f671-4664-9bc0-22386716e002"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "uprn selected",
+                                "dataName": "uprn_selected",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-4f9339c2-72a9-4343-be83-57e04dabdbb6"
+                            },
+                            {
+                              "type": "autoLookup",
+                              "props": {
+                                "dataName": "autolookup2",
+                                "lookup": "58ca6c233f02c",
+                                "lookupCondition": "onDisplay",
+                                "lookupButton": null,
+                                "noResultsMessage": "",
+                                "noRetryOnIntegrationFailure": false,
+                                "preventRunningOnInitialisation": true,
+                                "displayName": "",
+                                "displayCondition": "{Choose_Address} isnt {uprn_selected} and {showAd} contains 'sPick'"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "Choose_Address",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": " isnt",
+                                  "type": [
+                                    "_match"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "uprn_selected",
+                                  "type": [
+                                    "fields_match"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "sPick",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ],
+                              "id": "AF-Field-b8f87c80-9b3b-4256-9452-2b2aa28e9089"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Address message",
+                                "dataName": "adMsg",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-42f145d2-09c5-48d7-a1c1-1b151e0a0302"
+                            },
+                            {
+                              "type": "html",
+                              "props": {
+                                "label": "html 1",
+                                "dataName": "html1",
+                                "displayName": "",
+                                "outerClass": "",
+                                "width": "",
+                                "showInSummary": false,
+                                "content": "<div>{#adMsg}</div>",
+                                "displayCondition": "{adMsg} isnt '' and {showAd} contains 'sPick'",
+                                "readOnly": false,
+                                "mandatory": false
+                              },
+                              "id": "AF-Field-1f9ccaee-acb7-4fb9-b092-5fa2fd3a2457",
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "adMsg",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "isnt ''",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "sPick",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "checkbox",
+                              "id": "AF-Field-0091a1e9-e77a-4dc9-927c-e8bc949510e3",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "This Field Requires you select more choices",
+                                "maximumChoicesMessage": "This Field Requires you select less choices",
+                                "label": "Was the Address Found?",
+                                "dataName": "Address_Found",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "text",
+                                "defaultValue": null,
+                                "defaultValueText": "nothing",
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "The address is not in the list",
+                                    "value": "1"
+                                  }
+                                ],
+                                "displayName": "",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "width": "",
+                                "displayStyle": "vertical",
+                                "styleAsButton": false,
+                                "hideWhenBlank": false,
+                                "hidden": false,
+                                "displayCondition": "(( {postcode_search_after} isnt '' or {adMsg} isnt '' ) and {uprn_selected} is '' and {showAd} contains 'sPick' and {subParam} notcontains 'MP' and {subParam} notcontains 'oNuA') or {Address_Found} isnt ''",
+                                "selectCondition": "",
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "mandatoryMessage": "This information is required",
+                                "preventRunningOnInitialisation": null
+                              }
+                            },
+                            {
+                              "type": "checkbox",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                                "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                                "label": "Address Overseas",
+                                "dataName": "addressOverseas",
+                                "labelPosition": "hideLabel",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "preventRunningOnInitialisation": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "The address is overseas",
+                                    "value": "overseas"
+                                  }
+                                ],
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "displayStyle": "horizontal",
+                                "styleAsButton": null,
+                                "hideWhenBlank": null,
+                                "hidden": false,
+                                "displayCondition": "{subParam} contains 'VR'",
+                                "selectCondition": "",
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "mandatoryMessage": "This information is required"
+                              },
+                              "id": "AF-Field-58b7412b-f8b6-4f5f-9c62-f166416b2245",
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "subParam",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "VR",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "textarea",
+                              "props": {
+                                "label": "Address",
+                                "dataName": "AdTextArea_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "concat(\n{textOut1}, if(length({textOut1}) < 4, ' ', '\\n'),\nif({textOut2} != '', concat({textOut2}, if(length({textOut2}) < 4, ' ', '\\n')), ''),\nif({textOut3} != '', concat({textOut3},'\\n'), ''),\nif({textOut4} != '', concat({textOut4},'\\n'), ''),\n{upPostcode_out},\nif({addrCountry} != '', concat('\\n',{addrCountry})))",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "{showAd} contains 'ShowRO'",
+                                "mandatoryCondition": "{subParam} contains 'mAd'",
+                                "readonlyCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "Please ensure an address is entered/selected",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "id": "AF-Field-dd8dded7-d203-42fb-8ddd-fbd651f7e5e1",
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "ShowRO",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-99e40949-5c35-4113-b09d-fae1cddace68",
+                              "props": {
+                                "label": "Flat number (if applicable)",
+                                "dataName": "flat_out1",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "outputFormat": "normal",
+                                "currencyPrefix": "",
+                                "width": "",
+                                "inputMask": "",
+                                "inputMaskPlaceholder": "",
+                                "lengthCount": false,
+                                "hideWhenBlank": false,
+                                "displayCondition": "{showAd} contains 'ShowUD'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": "{showAd} contains 'RO'"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "ShowUD",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Check House Flat",
+                                "dataName": "valid1",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "{flat_out1} + {house_out1}",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "outputFormat": "normal",
+                                "currencyPrefix": "",
+                                "width": "",
+                                "inputMask": "",
+                                "inputMaskPlaceholder": "",
+                                "lengthCount": false,
+                                "hideWhenBlank": false,
+                                "displayCondition": "",
+                                "mandatoryCondition": "{subParam} contains 'mAd' and {showAd} = 'ShowUD'",
+                                "readonlyCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "Enter a Flat or House Number",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "id": "AF-Field-25af4527-c641-4c40-99e2-dfa28ae2bccb"
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-f5fc44b0-51e7-44c5-9ec3-a429be2c775e",
+                              "props": {
+                                "label": "House",
+                                "dataName": "house_out1",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "{showAd} icontains 'ShowUD'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": ""
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-b0d55670-651b-4808-a99f-fbf06922b10b",
+                              "props": {
+                                "label": "Road",
+                                "dataName": "street_out1",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "{showAd} icontains 'ShowUD'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "{subParam} contains 'mAd'",
+                                "readonlyCondition": ""
+                              }
+                            },
+                            {
+                              "type": "number",
+                              "props": {
+                                "label": "overseas",
+                                "dataName": "overseas",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({showAd} contains 'ShowUD',if({checkAddressIn} = 2,2,1),0)",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "prefix": null,
+                                "suffix": null,
+                                "width": null,
+                                "decimalPlaces": null,
+                                "numberToText": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": "",
+                                "mandatory": false,
+                                "minimumValue": "",
+                                "maximumValue": "",
+                                "validationCondition": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumValueMessage": "Please input _min_value_ or more",
+                                "maximumValueMessage": "Please input _max_value_ or less",
+                                "validationConditionMessage": "This field is invalid"
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-f641f726-1a51-4256-83ce-547ccd83f746"
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-c07baa09-1ccb-418f-8e7f-5bb18e4e9962",
+                              "props": {
+                                "label": "City/Town",
+                                "dataName": "town_out1",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "{showAd} icontains 'ShowUD'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": ""
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "icontains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "ShowUD",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-b9d18b18-429c-4b50-b6e5-1320ab83dd26",
+                              "props": {
+                                "label": "Postcode",
+                                "dataName": "postcode_out51",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "{overseas} is '1'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "_custom_regex_",
+                                "mandatoryMessage": "Please enter a Postcode for example 'PO1 2AL' ",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "Please enter a Postcode for example 'PO1 2AL' ",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "{subParam} contains 'mPo' or {subParam} contains 'mAd'",
+                                "readonlyCondition": "{showAd} contains 'RO'",
+                                "_custom_regex_": "(((^[BEGLMNSbeglmns][1-9]\\d?)|(^[Ww][2-9])|(^([Aa][BLbl]|[Bb][ABDHLNRSTabnhlnrst]|[Cc][ABFHMORTVWabfhmortvw]|[Dd][ADEGHLNTYadeghlnty]|[Ee][HNXhnx]|[Ff][KYky]|[Gg][LUYluy]|[Hh][ADGPRSUXadgprsux]|[Ii][GMPVgmpv]|[JEje]|[Kk][ATWYatwy]|[Ll][ADELNSUadelnsu]|[Mm][EKLekl]|[Nn][EGNPRWegnprw]|O[LXlx]|[Pp][AEHLORaehlor]|[Rr][GHMghm]|[Ss][AEGKL-Paegkl-pRSTWYrstwy]|[Tt][ADFNQRSWadfnqrsw]|[Uu][Bb]|[Ww][ADFNRSVadfnrsv]|[Yy][Oo]|[Zz][Ee])\\d\\d?)|(^[Ww]1[A-Ha-hJKSTUWjkstuw0-9])|(((^[Ww][Cc][1-2])|(^[Ee][Cc][1-4])|(^[Ss][Ww]1))[ABEHMNPRVWXYabehmnprvwxy]))\\s([0-9][ABD-Habd-hJLNP-Ujlnp-uW-Zw-z]{2}))$|(^[Gg][Ii][Rr]\\s0[Aa]{2})$"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "overseas",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "is",
+                                  "type": [
+                                    "_number"
+                                  ]
+                                },
+                                {
+                                  "element": "number",
+                                  "value": "1",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "ZIP / Postcode",
+                                "dataName": "zIPPostcode1",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "{overseas} is '2'",
+                                "mandatoryCondition": "{subParam} contains 'mPo'",
+                                "readonlyCondition": "{showAd} contains 'RO'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "overseas",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "is",
+                                  "type": [
+                                    "_number"
+                                  ]
+                                },
+                                {
+                                  "element": "number",
+                                  "value": "2",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ],
+                              "id": "AF-Field-faf12ff9-ee23-4f3e-b204-a49efdffd92e"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Country",
+                                "dataName": "country_out1",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "{overseas} is '2'",
+                                "mandatoryCondition": "{subParam} contains 'mCt'",
+                                "readonlyCondition": "{showAd} contains 'RO'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "id": "AF-Field-2a9bab5c-4315-4715-9987-05900c4419ea",
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "overseas",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "is",
+                                  "type": [
+                                    "_number"
+                                  ]
+                                },
+                                {
+                                  "element": "number",
+                                  "value": "2",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "checkbox",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                                "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                                "label": "Confirm address",
+                                "dataName": "confirmAddress",
+                                "labelPosition": "hideLabel",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "preventRunningOnInitialisation": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "Confirm address",
+                                    "value": "1"
+                                  }
+                                ],
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "width": "",
+                                "displayStyle": "horizontal",
+                                "styleAsButton": true,
+                                "hideWhenBlank": false,
+                                "hidden": false,
+                                "displayCondition": "{showAd} contains 'ShowUD'",
+                                "selectCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": true,
+                                "mandatoryMessage": "You need to confirm the address once entered"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "ShowUD",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ],
+                              "id": "AF-Field-05e42e7b-18e0-405c-91d9-f86dd44db248"
+                            },
+                            {
+                              "type": "html",
+                              "props": {
+                                "label": "html 3",
+                                "dataName": "html3",
+                                "displayName": "",
+                                "outerClass": "",
+                                "width": "",
+                                "showInSummary": false,
+                                "content": "{#confMsg}",
+                                "displayCondition": "{confMsg} isnt '' and {showAd} contains 'ShowUD'",
+                                "readOnly": false
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "confMsg",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "isnt ''",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "ShowUD",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ],
+                              "id": "AF-Field-608f9bae-4918-47a6-88f5-8cb54b4ef8d8"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Confirm Message",
+                                "dataName": "confMsg",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-19e40ef2-dbdd-42b9-8fd6-1d93ec24cf63"
+                            },
+                            {
+                              "type": "button",
+                              "props": {
+                                "label": "Change address",
+                                "dataName": "changeAddress",
+                                "labelPosition": "hideLabel",
+                                "helpText": "",
+                                "lookup": [
+                                  "5a942cd406631"
+                                ],
+                                "noResultsMessage": "",
+                                "action": "",
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "width": "",
+                                "buttonText": "Change address",
+                                "displayCondition": "( {uprn_selected} is {uprn_out} or {uprn_selected} contains 'Entered' ) and {uprn_selected} isnt '' and {subParam} notcontains 'dAro' and {showAd} contains 'Show'"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "(",
+                                  "type": [
+                                    "brackets_open"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "uprn_selected",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": " is",
+                                  "type": [
+                                    "_match"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "uprn_out",
+                                  "type": [
+                                    "fields_match"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "or",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "uprn_selected",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "Entered",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": ")",
+                                  "type": [
+                                    "brackets_close"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "uprn_selected",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "isnt ''",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "subParam",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "notcontains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "dAro",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "showAd",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "Show",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ],
+                              "id": "AF-Field-1ad1da18-7176-4e08-b722-c9f6848b63c2"
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-e53ea7bd-70bb-444d-a2ad-162265dd1027",
+                              "props": {
+                                "label": "Flat number (if applicable)",
+                                "dataName": "flat_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "outputFormat": "normal",
+                                "currencyPrefix": "",
+                                "width": "",
+                                "inputMask": "",
+                                "inputMaskPlaceholder": "",
+                                "lengthCount": false,
+                                "hideWhenBlank": false,
+                                "displayCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": ""
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-88560152-60be-4ebb-9e8e-966d45df9505",
+                              "props": {
+                                "label": "House",
+                                "dataName": "house_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": ""
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-96e4b5da-8628-4a88-aa4b-e4659267edaa",
+                              "props": {
+                                "label": "Road",
+                                "dataName": "street_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": ""
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-6bff83e3-10c9-4733-916e-772c9f98f5c5",
+                              "props": {
+                                "label": "City/Town",
+                                "dataName": "town_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": ""
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-574fee27-c279-4ccc-be3a-54dfd2c12232",
+                              "props": {
+                                "label": "Postcode",
+                                "dataName": "postcode_out5",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "Please enter a Postcode for example 'PO1 2AL' ",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "Please enter a Postcode for example 'PO1 2AL' ",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": ""
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "ZIP / Postcode",
+                                "dataName": "zIPPostcode",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "id": "AF-Field-55eb6cad-386c-4b1e-8dfa-3f96ba2017d5"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Check Postcode",
+                                "dataName": "checkPostcode",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({zIPPostcode}!='',{zIPPostcode},upperstr({postcode_out5}))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-5e6e4dd1-e62c-42b7-87c0-b9ff90fb9b75"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Country",
+                                "dataName": "country_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": "",
+                                "mandatoryCondition": "",
+                                "readonlyCondition": "",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "id": "AF-Field-efd338b9-5f28-461b-96fd-3a12d110ab83"
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-d6dfcc6a-fa50-4bd2-8d85-927def97ae45",
+                              "conditionInputs": [],
+                              "props": {
+                                "label": "uprn_out",
+                                "dataName": "uprn_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatory": false,
+                                "minimumLength": null,
+                                "maximumLength": null,
+                                "validationCondition": null,
+                                "validationMask": null,
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid"
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-a6f7f7de-ab40-4ab0-9131-28208c0d3c50",
+                              "conditionInputs": [],
+                              "props": {
+                                "label": "lat",
+                                "dataName": "lat_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": null,
+                                "maximumLength": null,
+                                "validationCondition": null,
+                                "validationMask": null,
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid"
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-24a2c51b-b990-4b82-84d8-7bb43ca6966f",
+                              "conditionInputs": [],
+                              "props": {
+                                "label": "lng",
+                                "dataName": "lng_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": null,
+                                "maximumLength": null,
+                                "validationCondition": null,
+                                "validationMask": null,
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "This Field Does Not Fit The Right Pattern",
+                                "validationConditionMessage": "This Field Is Invalid"
+                              }
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Available Fields",
+                                "dataName": "available",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "concat(if({flat_out}!='',1,''),\nif({house_out}!='',2,''),\nif({street_out}!='',3,''),\nif({town_out}!='',4,''))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-364a649a-3d59-491b-aff3-ed809dbf901c"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "AddrLine1",
+                                "dataName": "textOut1",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if(substr ({available},0,1) = 1, trim({flat_out}), \nif(substr ({available},0,1) = 2, trim({house_out}), \nif(substr ({available},0,1) = 3, trim({street_out}), \nif(substr ({available},0,1) = 4, trim({town_out}), ''))))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-1346b044-7734-4985-99e5-425af7dd53bf"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "AddrLine2",
+                                "dataName": "textOut2",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if(substr ({available},1,1) = 2, trim({house_out}), \nif(substr ({available},1,1) = 3, trim({street_out}), \nif(substr ({available},1,1) = 4, trim({town_out}), '')))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-22c0416b-8301-4d08-950f-4517957c70aa"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "AddrLine3",
+                                "dataName": "textOut3",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if(substr ({available},2,1) = 3, trim({street_out}), \nif(substr ({available},2,1) = 4, trim({town_out}), ''))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-cb600040-f3ca-4863-8fa4-40dbe446cb2d"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "AddrLine4",
+                                "dataName": "textOut4",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if(substr ({available},3,1) = 4, trim({town_out}), '')",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-48e53f95-c2d2-49c7-b03c-ded9973492e5"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Upper Postcode Out",
+                                "dataName": "upPostcode_out",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "upperstr(trim({checkPostcode}))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-ef38b24a-308c-4e65-a781-0723d5af361e"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Address Country",
+                                "dataName": "addrCountry",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "trim({country_out})",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-9f035803-9b13-4eda-9f7e-73100701df37"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Address Concatinated",
+                                "dataName": "AddrConcat",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "concat(\n{textOut1}, ', ',\nif({textOut2} != '', concat({textOut2},', '), ''),\nif({textOut3} != '', concat({textOut3},', '), ''),\nif({textOut4} != '', concat({textOut4},', '), ''),\n{upPostcode_out},\nif({addrCountry} != '', concat(', ',{addrCountry})))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-513e75cf-bd19-4640-afa7-21eda056ea7a"
+                            },
+                            {
+                              "type": "autoLookup",
+                              "props": {
+                                "dataName": "autoConfirmAddress",
+                                "lookup": "58efbd46c0cbd",
+                                "lookupCondition": "onDisplay",
+                                "lookupButton": null,
+                                "noResultsMessage": "",
+                                "noRetryOnIntegrationFailure": false,
+                                "preventRunningOnInitialisation": false,
+                                "displayName": "",
+                                "displayCondition": "{confirmAddress} icontains '1'"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "confirmAddress",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "icontains",
+                                  "type": [
+                                    "_select"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "1",
+                                  "type": [
+                                    "list"
+                                  ]
+                                }
+                              ],
+                              "id": "AF-Field-b6e929d3-6d45-4557-b03d-7eaf035874cd"
+                            },
+                            {
+                              "type": "textarea",
+                              "props": {
+                                "label": "SF Summary",
+                                "dataName": "SF_Sum",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({showAd} contains 'ShowRO',\nconcat({#TTS},{#TRS},'Address',{#TRD},{AdTextArea_out},{#TRC},{#TTC}),'')",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-9388b2cc-206b-4251-b730-da2a76cce440"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "formated parts",
+                                "dataName": "formatedParts",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "length(concat({textOut1}, {textOut2}, {textOut3}, {textOut4}, {upPostcode_out}, {addrCountry}))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-542cd0df-592d-48a2-b876-0b9ded8744cd"
+                            },
+                            {
+                              "type": "text",
+                              "props": {
+                                "label": "Check on formatting complete",
+                                "dataName": "checkOnFormatting",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "{addressParts} + {formatedParts}",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "{addressParts} <= {formatedParts}",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "Please wait while we catch up",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-d095aacf-2b94-49d8-8fae-23b06e057f40"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-e4ae0791-5cbe-4cd5-a3ea-e1e48e245965"
+                },
+                {
+                  "type": "date",
+                  "props": {
+                    "label": "The date this should be ended:",
+                    "dataName": "endDate",
+                    "labelPosition": "alignLeft",
+                    "defaultType": "specific",
+                    "defaultValue": "",
+                    "helpText": "",
+                    "hidden": false,
+                    "readOnly": false,
+                    "summaryField": false,
+                    "displayName": "true",
+                    "outerClass": "",
+                    "labelClass": "",
+                    "inputClass": "",
+                    "width": "7",
+                    "hideWhenBlank": false,
+                    "displayAsSeparated": false,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": true,
+                    "minimumValue": "{today}",
+                    "maximumValue": "",
+                    "mandatoryMessage": "This field is required",
+                    "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                    "maximumValueMessage": "Please input a date no later than _max_value_",
+                    "dateFormatMessage": "Please input a date in the format _date_format_",
+                    "dateFormat": ""
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-d15b1a1d-9964-4bd7-85b0-d4189f392a96"
+                },
+                {
+                  "type": "date",
+                  "props": {
+                    "label": "The date the community alarm system must be disconnected:",
+                    "dataName": "theDateTheCommuni",
+                    "labelPosition": "alignLeft",
+                    "defaultType": "specific",
+                    "defaultValue": "",
+                    "helpText": "",
+                    "hidden": false,
+                    "readOnly": false,
+                    "summaryField": false,
+                    "displayName": "true",
+                    "outerClass": "",
+                    "labelClass": "",
+                    "inputClass": "",
+                    "width": "7",
+                    "hideWhenBlank": false,
+                    "displayAsSeparated": false,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": true,
+                    "minimumValue": "{today}",
+                    "maximumValue": "",
+                    "mandatoryMessage": "This field is required",
+                    "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                    "maximumValueMessage": "Please input a date no later than _max_value_",
+                    "dateFormatMessage": "Please input a date in the format _date_format_",
+                    "dateFormat": ""
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-89d13396-0228-4ab2-b17d-0c6441f3afe6"
+                },
+                {
+                  "type": "textarea",
+                  "props": {
+                    "label": "Additional comments:",
+                    "dataName": "additionalComments",
+                    "labelPosition": "alignLeft",
+                    "defaultValue": "",
+                    "helpText": "",
+                    "hidden": false,
+                    "readOnly": false,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "lengthCount": null,
+                    "hideWhenBlank": null,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumLength": "",
+                    "maximumLength": "",
+                    "validationMask": "",
+                    "mandatoryMessage": "This field is required",
+                    "minimumLengthMessage": "Please input at least _min_value_ characters",
+                    "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                    "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                    "validationMaskMessageValue": "Select..."
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-3de46bff-05c9-44f3-89c7-98a548d1ed9f"
+                },
+                {
+                  "type": "html",
+                  "props": {
+                    "label": "html 2",
+                    "dataName": "html2",
+                    "displayName": "",
+                    "outerClass": "",
+                    "width": "",
+                    "showInSummary": false,
+                    "content": "<h4><center>Action to take</center></h4>\n  <div class=\"row\">\n    <div class=\"col-md-2\"><p><strong>SAC</strong></div>\n    <div class=\"col-md-10\"><p>Please disable the alarm system. The alarm system should not be removed until Steve Daddow has given written authority to do so.</p></div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-2\"><p><strong>Telecare</strong></p></div>\n    <div class=\"col-md-10\"><p>Please archive the record and label inactive.</p></div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-2\"><p><strong>Debit Control</strong></p></div>\n    <div class=\"col-md-8\"><p>Please end SPCHARGE, SERVCHARGE via bulk elem on the above days. <br />If currently SHELTCAT code 0.5 then remove the coding using the end date and delete TARGET-CAT.<br />If Shelt Cat 1 change to Shelt Cat 0.</p></div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-2\"><p><strong>NTOs</strong></p></div>\n    <div class=\"col-md-10\"><p>If Scheme Manager is not already aware, please notify them</p></div>\n  </div>",
+                    "displayCondition": null
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-44f0f4e3-73bd-4f14-8ba4-db9794f7dc4b"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "routes": {},
+      "populateFields": [
+        {
+          "label": "First name",
+          "dataName": "First_Name",
+          "populated": true
+        },
+        {
+          "label": "Last name",
+          "dataName": "Surname",
+          "populated": true
+        },
+        {
+          "label": "Email address",
+          "dataName": "Email_Address",
+          "populated": true
+        },
+        {
+          "label": "addrParam",
+          "dataName": "addrParam",
+          "populated": true
+        },
+        {
+          "label": "Property Address",
+          "dataName": "propertyAddress",
+          "populated": true
+        },
+        {
+          "label": "The date this should be ended:",
+          "dataName": "endDate",
+          "populated": true
+        },
+        {
+          "label": "The date the community alarm system must be disconnected:",
+          "dataName": "theDateTheCommuni",
+          "populated": true
+        },
+        {
+          "label": "Additional comments:",
+          "dataName": "additionalComments",
+          "populated": true
+        }
+      ]
+    }
+  }
+}
