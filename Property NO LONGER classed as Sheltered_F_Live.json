@@ -1,18 +1,18 @@
 {
-  "processName": "Property NO LONGER classed as Sheltered",
+  "processName": "Property NO LONGER classed as Sheltered - TEST",
   "processDescription": "",
   "props": {
     "id": "AF-Process-5ecb7fca-e28e-4603-977d-56397885a950",
     "category": "AF-Category-b88a4170-933c-43d7-9d1c-c8c114ddca13",
     "tags": "",
-    "viewGroup": null,
-    "viewGroupToken": null,
+    "viewGroup": "USERGROUP-117be60e-6032-4bb7-976f-db1baa4bab85",
+    "viewGroupToken": "",
     "date_due": "",
     "date_due_warn": "",
     "showCaseReference": false,
     "isPublished": true,
     "isSubform": false,
-    "notes": false,
+    "notes": "added test warning",
     "initial_stage": "notification",
     "initial_stage_id": "AF-Stage-d951c077-2d69-445f-8b3d-91892efedb6f",
     "prefix": "HO"
@@ -26,7 +26,7 @@
         "form": "AF-Form-32273f91-17b0-4e17-a9a0-49f90e2d0c98",
         "xpos": 20,
         "ypos": 20,
-        "group": null,
+        "group": "",
         "integrations": [
           {
             "id": "5d0a5f8a63447",
@@ -37,8 +37,8 @@
             "repeat_interval": ""
           }
         ],
-        "user_token": null,
-        "group_token": null,
+        "user_token": "",
+        "group_token": "",
         "stopOnFailure": false,
         "useNewPaymentMethod": false,
         "textColor": "#ffffff",
@@ -69,6 +69,7 @@
         "caseViewOption": false,
         "startSection": "",
         "usenewPaymentMethod": false,
+        "user_ucrn": "",
         "formDefinition": {
           "formName": "Property NO LONGER classed as Sheltered",
           "formDescription": "",
@@ -131,7 +132,7 @@
                 "Category": "z Global",
                 "data_type": "lookup",
                 "allow_offline": 0,
-                "Output_template": "{\"lookup_validation\":\"0\",\"secure_fields_db_database\":\"\",\"results_page_columns_db\":\"\",\"escapeTokens\":\"yes\",\"systemName\":\"Firmstep Solutions Read\",\"query\":\"select CONCAT(trim(concat(sao,' ',pao)),' ',street_name,', ',town_name) as display, uprn as name\\nFROM llpgcache\\nWHERE \\n(\\n(REPLACE(postcode, ' ','') = REPLACE({postcode_search_after},' ',''))\\nOR (concat(trim(concat(sao,' ',pao)),' ',street_name) like concat('%',{postcode_search_after},'%'))\\n)\\nAND length(REPLACE({postcode_search_after},' ',''))>5\\nAND postcode != ''\\nORDER BY CAST(pao AS SIGNED),sao,street_name ASC LIMIT 300\",\"systemID\":\"59dc224eb4f63\"}",
+                "Output_template": "{\"systemID\":\"59dc224eb4f63\",\"systemName\":\"Granicus Solutions Read\",\"query\":\"select CONCAT(trim(concat(sao,' ',pao)),' ',street_name,', ',town_name) as display, uprn as name\\nFROM (SELECT * FROM llpgcache WHERE {postcode_search_after} != '') tmp\\nWHERE (\\n(REPLACE(postcode, ' ','') = REPLACE({postcode_search_after},' ',''))\\nOR (concat(trim(concat(sao,' ',pao)),' ',street_name) like concat('%',{postcode_search_after},'%'))\\n)\\nAND length(REPLACE({postcode_search_after},' ',''))>5\\nAND postcode != ''\\n\\nORDER BY CAST(pao AS SIGNED),sao,street_name ASC LIMIT 300\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
                 "log_only_on_error": 0,
                 "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portmouthcc.gov.uk\"}"
               },
@@ -144,7 +145,7 @@
                 "Category": "z Global",
                 "data_type": "lookup",
                 "allow_offline": 0,
-                "Output_template": "{\"lookup_validation\":\"0\",\"results_page_columns_db\":\"\",\"escapeTokens\":\"yes\",\"systemName\":\"Firmstep Solutions Read\",\"query\":\"select\\n\\tsao as flat_out,\\n\\tpao as house_out,\\n\\tstreet_name as street_out,\\n\\ttown_name as town_out, \\n\\tpostcode as postcode_out5,\\n\\tuprn as uprn_out,\\n\\tlng as lng_out,\\n\\tlat as lat_out,\\n\\t{Choose_Address} as uprn_selected\\nFROM \\n\\tllpgcache\\nWHERE \\n\\tuprn = {Choose_Address}\",\"systemID\":\"59dc224eb4f63\"}",
+                "Output_template": "{\"systemID\":\"59dc224eb4f63\",\"systemName\":\"Granicus Solutions Read\",\"query\":\"select a.*\\n\\t\\t,if(substring(a.test,1,1)='1',flat_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t ,if(substring(a.test,1,1)='2',house_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t  ,if(substring(a.test,1,1)='3',street_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t   ,if(substring(a.test,1,1)='4',town_out,'')))) as textOut1\\n\\t\\t,if(substring(a.test,2,1)='2',house_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t ,if(substring(a.test,2,1)='3',street_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t  ,if(substring(a.test,2,1)='4',town_out,''))) as textOut2\\n\\t\\t,if(substring(a.test,3,1)='3',street_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t ,if(substring(a.test,3,1)='4',town_out,'')) as textOut3\\n\\t\\t,if(substring(a.test,4,1)='4',town_out,'') as textOut4\\n\\t\\t,a.test as available\\n\\t\\t,concat(if(flat_out != '', concat(flat_out,', '), ''),\\n\\t\\t\\t\\tif(house_out != '', concat(house_out,', '), ''),\\n\\t\\t\\t\\tif(street_out != '', concat(street_out,', '), ''),\\n\\t\\t\\t\\tif(town_out != '', concat(town_out,', '), ''),\\n\\t\\t\\t\\tpostcode_out5) as AddrConcat\\nfrom (\\nselect\\n\\tsao as flat_out,\\n\\tpao as house_out,\\n\\tstreet_name as street_out,\\n\\ttown_name as town_out, \\n\\tpostcode as postcode_out5,\\n\\tuprn as uprn_out,\\n\\tlng as lng_out,\\n\\tlat as lat_out,\\n\\t{Choose_Address} as uprn_selected,\\n\\tCONCAT(if(length(sao)>0,1,'')\\n\\t\\t\\t,if(length(pao)>0,2,'')\\n\\t\\t\\t,if(length(street_name)>0,3,'')\\n\\t\\t\\t,if(length(town_name)>0,4,'')) as test\\nFROM \\n\\tllpgcache\\nWHERE \\n\\tuprn = {Choose_Address}) a\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
                 "log_only_on_error": 0,
                 "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portmouthcc.gov.uk\"}"
               },
@@ -157,7 +158,7 @@
                 "Category": "z Global",
                 "data_type": "lookup",
                 "allow_offline": 0,
-                "Output_template": "{\"lookup_validation\":\"0\",\"secure_fields_db_database\":\"\",\"results_page_columns_db\":\"\",\"escapeTokens\":\"yes\",\"systemName\":\"Firmstep Solutions Read\",\"query\":\"select\\n\\ta.*,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,'Entered','') as uprn_selected,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,'',1) as Address_Found,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,'',concat(if(b.p1 + b.p2 + b.p3 < 3,if({subParam} like '%mAl%','<span style=\\\"color:red\\\">The address must contain a flat or house and road. </span>','<span style=\\\"color:red\\\">The address must contain a flat or house number, road and postcode. </span>'),''),if(b.p4 = 1,'<span style=\\\"color:red\\\">&nbsp;The postcode must contain a space, for e.g. \\\"PO1 2AL\\\"</span>',''))) as confMsg,\\n\\t'' as confirmAddress,\\n\\tb.*\\nfrom\\n\\t(select\\n\\t\\t123 as id,\\n\\t\\t{flat_out1} as flat_out,\\n\\t\\t{house_out1} as house_out,\\n\\t\\t{street_out1} as street_out,\\n\\t\\t{town_out1} as town_out, \\n\\t\\t{postcode_out51} as postcode_out5,\\n\\t\\t{zIPPostcode1} as zIPPostcode,\\n\\t\\t{country_out1} as country_out,\\n\\t\\t{sel_country} as country_id_out,\\n\\t\\t'' as uprn_out,\\n\\t\\t'' as lng_out,\\n\\t\\t'' as lat_out,\\n\\t\\t'' as existSelected,\\n\\t\\t'' as existingCustomer) as a\\nRIGHT JOIN\\n\\t(select \\n\\t\\tif(c.p1 + c.p2 + c.p3 - c.p4 > 2,'123','321') as id,\\n\\t\\tc.*\\n\\tfrom\\n\\t(select\\n\\t\\tif({flat_out1} != '' or {house_out1} != '',1,if({subParam} like '%mAd%' or {subParam} like '%mAl%',0,1)) as p1,\\n\\t\\tif({street_out1} != '',1,if({subParam} like '%mAd%'or {subParam} like '%mAl%',0,1)) as p2,\\n\\t\\tif({postcode_out51} != '' or {zIPPostcode1} != '',1,if({subParam} like '%mAd%' or {subParam} like '%mPo%',0,1)) as p3,\\n\\t\\tif({postcode_out51} REGEXP '(((^[BEGLMNSbeglmns][1-9][0-9]?)|(^[Ww][2-9])|(^([Aa][BLbl]|[Bb][ABDHLNRSTabnhlnrst]|[Cc][ABFHMORTVWabfhmortvw]|[Dd][ADEGHLNTYadeghlnty]|[Ee][HNXhnx]|[Ff][KYky]|[Gg][LUYluy]|[Hh][ADGPRSUXadgprsux]|[Ii][GMPVgmpv]|[JEje]|[Kk][ATWYatwy]|[Ll][ADELNSUadelnsu]|[Mm][EKLekl]|[Nn][EGNPRWegnprw]|O[LXlx]|[Pp][AEHLORaehlor]|[Rr][GHMghm]|[Ss][AEGKL-Paegkl-pRSTWYrstwy]|[Tt][ADFNQRSWadfnqrsw]|[UBub]|[Ww][ADFNRSVadfnrsv]|YO|ZE|yo|ze)[0-9][0-9]?)|(^[Ww]1[A-Ha-hJKSTUWjkstuw0-9])|(((^[Ww][Cc][1-2])|(^[Ee][Cc][1-4])|(^[Ss][Ww]1))[ABEHMNPRVWXYabehmnprvwxy]))[_ ]([0-9][ABD-Habd-hJLNP-Ujlnp-uW-Zw-z]{2}))$|(^[Gg][Ii][Rr][_ ]0[Aa]{2})$',0,if({postcode_out51} != '',1,0)) as p4) as c) as b\\nON\\n\\ta.id = b.id\",\"systemID\":\"59dc224eb4f63\"}",
+                "Output_template": "{\"systemID\":\"59dc224eb4f63\",\"systemName\":\"Granicus Solutions Read\",\"query\":\"select\\n\\ta.*,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,'Entered','') as uprn_selected,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,'',1) as Address_Found,\\n\\tif(b.p1 + b.p2 + b.p3 - b.p4 > 2,''\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t,concat(if(b.p1 + b.p2 + b.p3 < 3,'<span style=\\\"color:red\\\">The address must contain a flat or house number, road and postcode. </span>','')\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t,if(b.p4 = 1,'<span style=\\\"color:red\\\">&nbsp;The postcode must contain a space, for e.g. \\\"PO1 2AL\\\"</span>',''))) as confMsg,\\n\\t'' as confirmAddress,\\n\\tb.*\\nfrom(\\nselect aq.*\\n\\t\\t,if(substring(aq.test,1,1)='1',flat_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t ,if(substring(aq.test,1,1)='2',house_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t  ,if(substring(aq.test,1,1)='3',street_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t   ,if(substring(aq.test,1,1)='4',town_out,'')))) as textOut1\\n\\t\\t,if(substring(aq.test,2,1)='2',house_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t ,if(substring(aq.test,2,1)='3',street_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t  ,if(substring(aq.test,2,1)='4',town_out,''))) as textOut2\\n\\t\\t,if(substring(aq.test,3,1)='3',street_out\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t ,if(substring(aq.test,3,1)='4',town_out,'')) as textOut3\\n\\t\\t,if(substring(aq.test,4,1)='4',town_out,'') as textOut4\\n\\t\\t,aq.test as available\\n\\t\\t,concat(if(flat_out != '', concat(flat_out,', '), ''),\\n\\t\\t\\t\\tif(house_out != '', concat(house_out,', '), ''),\\n\\t\\t\\t\\tif(street_out != '', concat(street_out,', '), ''),\\n\\t\\t\\t\\tif(town_out != '', concat(town_out,', '), ''),\\n\\t\\t\\t\\tpostcode_out5, zIPPostcode,\\n\\t\\t\\t\\tif(country_out != '', concat(', ', country_out), '')) as AddrConcat\\nfrom (\\nselect\\n\\t123 as id,\\n\\t\\t{flat_out1} as flat_out,\\n\\t\\t{house_out1} as house_out,\\n\\t\\t{street_out1} as street_out,\\n\\t\\t{town_out1} as town_out, \\n\\t\\t{postcode_out51} as postcode_out5,\\n\\t\\t{zIPPostcode1} as zIPPostcode,\\n\\t\\t{country_out1} as country_out,\\n\\t\\t{sel_country} as country_id_out,\\n\\t\\t'' as uprn_out,\\n\\t\\t'' as lng_out,\\n\\t\\t'' as lat_out,\\n\\t\\t'' as existSelected,\\n\\t\\t'' as existingCustomer,\\n\\tCONCAT(if(length({flat_out1})>0,1,'')\\n\\t\\t\\t,if(length({house_out1})>0,2,'')\\n\\t\\t\\t,if(length({street_out1})>0,3,'')\\n\\t\\t\\t,if(length({town_out1})>0,4,'')) as test) aq\\n\\t) as a\\nRIGHT JOIN\\n\\t(select \\n\\t\\tif(c.p1 + c.p2 + c.p3 - c.p4 > 2,'123','321') as id,\\n\\t\\tc.*\\n\\tfrom\\n\\t(select\\n\\t\\tif({flat_out1} != '' or {house_out1} != '',1,0) as p1,\\n\\t\\tif({street_out1} != '',1,0) as p2,\\n\\t\\tif({postcode_out51} != '' or {zIPPostcode1} != '',1,0) as p3,\\n\\t\\tif({postcode_out51} REGEXP '(((^[BEGLMNSbeglmns][1-9][0-9]?)|(^[Ww][2-9])|(^([Aa][BLbl]|[Bb][ABDHLNRSTabnhlnrst]|[Cc][ABFHMORTVWabfhmortvw]|[Dd][ADEGHLNTYadeghlnty]|[Ee][HNXhnx]|[Ff][KYky]|[Gg][LUYluy]|[Hh][ADGPRSUXadgprsux]|[Ii][GMPVgmpv]|[JEje]|[Kk][ATWYatwy]|[Ll][ADELNSUadelnsu]|[Mm][EKLekl]|[Nn][EGNPRWegnprw]|O[LXlx]|[Pp][AEHLORaehlor]|[Rr][GHMghm]|[Ss][AEGKL-Paegkl-pRSTWYrstwy]|[Tt][ADFNQRSWadfnqrsw]|[UBub]|[Ww][ADFNRSVadfnrsv]|YO|ZE|yo|ze)[0-9][0-9]?)|(^[Ww]1[A-Ha-hJKSTUWjkstuw0-9])|(((^[Ww][Cc][1-2])|(^[Ee][Cc][1-4])|(^[Ss][Ww]1))[ABEHMNPRVWXYabehmnprvwxy]))[_ ]([0-9][ABD-Habd-hJLNP-Ujlnp-uW-Zw-z]{2}))$|(^[Gg][Ii][Rr][_ ]0[Aa]{2})$',0,if({postcode_out51} != '',1,0)) as p4) as c) as b\\nON\\n\\ta.id = b.id\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
                 "log_only_on_error": 0,
                 "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portmouthcc.gov.uk\"}"
               }
@@ -193,7 +194,7 @@
                     "outerClass": "",
                     "width": "",
                     "showInSummary": false,
-                    "content": "<h4>Purpose</h4>\n\n<p>To ensure that PCC tenancies are correctly recorded as either General Needs or Sheltered Housing Units.</p>\n\n<p>Status changes occur either at the start of a tenancy or during the duration of a tenancy ( ie from general needs to category 1 or vica versa)</p>\n\n<p>Start of a tenancy - the responsibility is with the housing officer.</p>\n\n<p>During the tenancy -the responsibility is with the Sheltered Housing Management team.</p>\n\n<h4>Sheltered Housing accommodation will have:</h4>\n<ul>\n<li>an appropriate category recorded on Northgate\n    <ul>\n        <li>Shelt CAT 0.5 = Future lettings recorded as general needs</li>\n        <li>Shelt Cat 0 = Future lettings recorded as Sheltered</li>\n    </ul>\n</li>\n<li> additional charges ie sheltered housing service charge and supporting people charge</li>\n<li>an alarm unit within the flat linked into the scheme and/or Southampton telecare </li>\n<li>records held on the telecare system shared with Southampton</li>\n<li>the support of a scheme manager</li>\n<li>These changes relate to Category 1 Sheltered Housing. So Category 2 and Category 2.5 properties always remain as Sheltered Units</li>\n</ul>",
+                    "content": "{#testFormWarn} \n<h4>Purpose</h4>\n\n<p>To ensure that PCC tenancies are correctly recorded as either General Needs or Sheltered Housing Units.</p>\n\n<p>Status changes occur either at the start of a tenancy or during the duration of a tenancy ( ie from general needs to category 1 or vica versa)</p>\n\n<p>Start of a tenancy - the responsibility is with the housing officer.</p>\n\n<p>During the tenancy -the responsibility is with the Sheltered Housing Management team.</p>\n\n<h4>Sheltered Housing accommodation will have:</h4>\n<ul>\n<li>an appropriate category recorded on Northgate\n    <ul>\n        <li>Shelt CAT 0.5 = Future lettings recorded as general needs</li>\n        <li>Shelt Cat 0 = Future lettings recorded as Sheltered</li>\n    </ul>\n</li>\n<li> additional charges ie sheltered housing service charge and supporting people charge</li>\n<li>an alarm unit within the flat linked into the scheme and/or Southampton telecare </li>\n<li>records held on the telecare system shared with Southampton</li>\n<li>the support of a scheme manager</li>\n<li>These changes relate to Category 1 Sheltered Housing. So Category 2 and Category 2.5 properties always remain as Sheltered Units</li>\n</ul>",
                     "displayCondition": null,
                     "readOnly": false
                   },
@@ -391,6 +392,47 @@
                   },
                   "conditionInputs": [],
                   "id": "AF-Field-5e14ed5d-44c0-45f4-968f-5cca7ee9fae3"
+                },
+                {
+                  "type": "text",
+                  "props": {
+                    "label": "Rent Account Pay Ref",
+                    "dataName": "rentAccountPayRef",
+                    "labelPosition": "alignLeft",
+                    "defaultValue": "",
+                    "helpText": "",
+                    "hidden": false,
+                    "readOnly": false,
+                    "summaryField": false,
+                    "displayName": "true",
+                    "outerClass": "",
+                    "labelClass": "",
+                    "inputClass": "",
+                    "outputFormat": "normal",
+                    "currencyPrefix": "",
+                    "width": "8",
+                    "inputMask": "",
+                    "inputMaskPlaceholder": "",
+                    "lengthCount": false,
+                    "hideWhenBlank": false,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": true,
+                    "minimumLength": "",
+                    "maximumLength": "",
+                    "validationCondition": "",
+                    "validationMask": "_custom_regex_",
+                    "mandatoryMessage": "This field is required",
+                    "minimumLengthMessage": "Please input at least _min_value_ characters",
+                    "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                    "validationMaskMessage": "The Pay Ref consists of a 10 numeric digits",
+                    "validationConditionMessage": "This field is invalid",
+                    "validationMaskMessageValue": "Custom Regex",
+                    "_custom_regex_": "[0-9]{10}$"
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-3692a909-9377-4438-869c-05c4c04f28bd"
                 },
                 {
                   "type": "subform",
@@ -1572,7 +1614,7 @@
                                 "label": "overseas",
                                 "dataName": "overseas",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "if({showAd} contains 'ShowUD',if({checkAddressIn} = 2,2,1),0)",
+                                "defaultValue": "if({showAd} contains 'ShowUD',if({checkAddressIn} = 2 or {addressOverseas} != '',2,1),0)",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -1890,9 +1932,9 @@
                                 "hidden": false,
                                 "displayCondition": "{showAd} contains 'ShowUD'",
                                 "selectCondition": null,
-                                "mandatoryCondition": null,
-                                "readonlyCondition": null,
-                                "mandatory": true,
+                                "mandatoryCondition": "{subParam} contains 'mAd' or {valid1} != '' or {street_out1} != '' or {town_out1} != '' or {postcode_out51} != '' or {zIPPostcode1} != '' or {country_out1} != ''",
+                                "readonlyCondition": "",
+                                "mandatory": false,
                                 "mandatoryMessage": "You need to confirm the address once entered"
                               },
                               "conditionInputs": [
@@ -3109,7 +3151,7 @@
                     "mandatoryCondition": null,
                     "readonlyCondition": null,
                     "mandatory": true,
-                    "minimumValue": "{today}",
+                    "minimumValue": "",
                     "maximumValue": "",
                     "mandatoryMessage": "This field is required",
                     "minimumValueMessage": "Please input a date no earlier than _min_value_",
@@ -3119,6 +3161,44 @@
                   },
                   "conditionInputs": [],
                   "id": "AF-Field-d15b1a1d-9964-4bd7-85b0-d4189f392a96"
+                },
+                {
+                  "type": "html",
+                  "props": {
+                    "label": "html 5",
+                    "dataName": "html5",
+                    "displayName": "",
+                    "outerClass": "",
+                    "width": "",
+                    "showInSummary": false,
+                    "content": "<p style=\"color:blue\">WARNING - date entered is in the past</p>",
+                    "displayCondition": "{endDate} < {today}",
+                    "readOnly": false
+                  },
+                  "conditionInputs": [
+                    {
+                      "element": "select",
+                      "value": "endDate",
+                      "type": [
+                        "fields"
+                      ]
+                    },
+                    {
+                      "element": "select",
+                      "value": "<",
+                      "type": [
+                        "_date"
+                      ]
+                    },
+                    {
+                      "element": "select",
+                      "value": "today",
+                      "type": [
+                        "dateTokens"
+                      ]
+                    }
+                  ],
+                  "id": "AF-Field-48445151-4084-4db8-9de3-d3ec355f9e01"
                 },
                 {
                   "type": "date",
@@ -3143,7 +3223,7 @@
                     "mandatoryCondition": null,
                     "readonlyCondition": null,
                     "mandatory": true,
-                    "minimumValue": "{today}",
+                    "minimumValue": "",
                     "maximumValue": "",
                     "mandatoryMessage": "This field is required",
                     "minimumValueMessage": "Please input a date no earlier than _min_value_",
@@ -3153,6 +3233,44 @@
                   },
                   "conditionInputs": [],
                   "id": "AF-Field-89d13396-0228-4ab2-b17d-0c6441f3afe6"
+                },
+                {
+                  "type": "html",
+                  "props": {
+                    "label": "html 6",
+                    "dataName": "html6",
+                    "displayName": "",
+                    "outerClass": "",
+                    "width": "",
+                    "showInSummary": false,
+                    "content": "<p style=\"color:blue\">WARNING - date entered is in the past</p>",
+                    "displayCondition": "{theDateTheCommuni} < {today}",
+                    "readOnly": false
+                  },
+                  "conditionInputs": [
+                    {
+                      "element": "select",
+                      "value": "theDateTheCommuni",
+                      "type": [
+                        "fields"
+                      ]
+                    },
+                    {
+                      "element": "select",
+                      "value": "<",
+                      "type": [
+                        "_date"
+                      ]
+                    },
+                    {
+                      "element": "select",
+                      "value": "today",
+                      "type": [
+                        "dateTokens"
+                      ]
+                    }
+                  ],
+                  "id": "AF-Field-b9ade0c2-fe7a-403a-8699-a42e6a929ace"
                 },
                 {
                   "type": "textarea",
@@ -3202,6 +3320,86 @@
                   },
                   "conditionInputs": [],
                   "id": "AF-Field-44f0f4e3-73bd-4f14-8ba4-db9794f7dc4b"
+                },
+                {
+                  "type": "text",
+                  "props": {
+                    "label": "Date warn end",
+                    "dataName": "dateWarnEnd",
+                    "labelPosition": "alignAbove",
+                    "defaultValue": "if({endDate} < {today}, 'yes', '')",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": true,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "outputFormat": "normal",
+                    "currencyPrefix": null,
+                    "width": null,
+                    "inputMask": null,
+                    "inputMaskPlaceholder": null,
+                    "lengthCount": null,
+                    "hideWhenBlank": null,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumLength": "",
+                    "maximumLength": "",
+                    "validationCondition": "",
+                    "validationMask": "",
+                    "mandatoryMessage": "This field is required",
+                    "minimumLengthMessage": "Please input at least _min_value_ characters",
+                    "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                    "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                    "validationConditionMessage": "This field is invalid",
+                    "validationMaskMessageValue": "Select..."
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-b8451f5a-c511-4d50-aff0-2eb065229e7d"
+                },
+                {
+                  "type": "text",
+                  "props": {
+                    "label": "date warn alarm",
+                    "dataName": "dateWarnAlarm",
+                    "labelPosition": "alignAbove",
+                    "defaultValue": "if({theDateTheCommuni} < {today}, 'yes', '')",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": true,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "outputFormat": "normal",
+                    "currencyPrefix": null,
+                    "width": null,
+                    "inputMask": null,
+                    "inputMaskPlaceholder": null,
+                    "lengthCount": null,
+                    "hideWhenBlank": null,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumLength": "",
+                    "maximumLength": "",
+                    "validationCondition": "",
+                    "validationMask": "",
+                    "mandatoryMessage": "This field is required",
+                    "minimumLengthMessage": "Please input at least _min_value_ characters",
+                    "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                    "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                    "validationConditionMessage": "This field is invalid",
+                    "validationMaskMessageValue": "Select..."
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-719da37a-3208-4ca3-b920-feb782451e76"
                 }
               ]
             }
@@ -3231,6 +3429,11 @@
           "populated": true
         },
         {
+          "label": "Rent Account Pay Ref",
+          "dataName": "rentAccountPayRef",
+          "populated": true
+        },
+        {
           "label": "Property Address",
           "dataName": "propertyAddress",
           "populated": true
@@ -3248,6 +3451,16 @@
         {
           "label": "Additional comments:",
           "dataName": "additionalComments",
+          "populated": true
+        },
+        {
+          "label": "Date warn end",
+          "dataName": "dateWarnEnd",
+          "populated": true
+        },
+        {
+          "label": "date warn alarm",
+          "dataName": "dateWarnAlarm",
           "populated": true
         }
       ]
